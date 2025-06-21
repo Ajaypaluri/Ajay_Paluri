@@ -24,11 +24,17 @@ export default function Hero() {
           Full Stack Developer crafting modern web experiences with the MERN stack
         </p>
         
-        <div className="flex justify-center mb-12">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <Button
+            onClick={() => scrollToSection("#projects")}
+            className="bg-green-500 hover:bg-green-600 text-white px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto"
+          >
+            View My Work
+          </Button>
           <Button
             variant="outline"
             onClick={() => scrollToSection("#contact")}
-            className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 drop-shadow-lg backdrop-blur-sm"
+            className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 drop-shadow-lg backdrop-blur-sm w-full sm:w-auto"
           >
             Get In Touch
           </Button>
