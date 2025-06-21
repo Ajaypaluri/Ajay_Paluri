@@ -70,10 +70,22 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
   const { ref, isIntersecting } = useIntersectionObserver();
 
   return (
-    <section id="projects" className="py-16 sm:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse animation-delay-2000"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-4 sm:mb-6">Featured Projects</h2>
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mb-6">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            </svg>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent mb-4 sm:mb-6">
+            Featured Projects
+          </h2>
           <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
             A collection of projects that showcase my skills and passion for development
           </p>
@@ -83,7 +95,7 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
           {projects.map((project, index) => (
             <Card
               key={project.id}
-              className={`overflow-hidden cursor-pointer transition-all duration-700 hover:shadow-xl hover:-translate-y-2 ${
+              className={`overflow-hidden cursor-pointer transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 hover:scale-105 bg-white/80 backdrop-blur-sm border-0 shadow-lg ${
                 isIntersecting 
                   ? "opacity-100 translate-y-0" 
                   : "opacity-0 translate-y-10"
@@ -91,11 +103,14 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
               style={{ transitionDelay: `${index * 200}ms` }}
               onClick={() => onProjectSelect(project)}
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover"
-              />
+              <div className="relative overflow-hidden group">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
               <CardContent className="p-4 sm:p-6">
                 <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-2">{project.title}</h3>
                 <p className="text-sm sm:text-base text-slate-600 mb-4 line-clamp-3">{project.description}</p>
@@ -139,10 +154,13 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
-            View All Projects
-          </Button>
+        <div className="text-center mt-16">
+          <div className="relative inline-block">
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl relative z-10">
+              View All Projects
+            </Button>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+          </div>
         </div>
       </div>
     </section>
