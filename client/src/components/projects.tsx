@@ -7,60 +7,136 @@ import { Project } from "@/lib/types";
 
 const projects: Project[] = [
   {
-    id: "ecommerce",
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and order processing.",
-    longDescription: "A comprehensive e-commerce platform built with modern web technologies. This project showcases advanced React patterns, secure payment processing with Stripe, and a robust backend API. The application features user authentication, product catalog management, shopping cart functionality, order processing, and an admin dashboard for managing products and orders.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    technologies: ["React", "Node.js", "MongoDB", "Stripe", "Express"],
+    id: "feedback-system",
+    title: "Anonymous Student Feedback System",
+    description: "A MERN stack-based platform for students to submit feedback anonymously. Secure, efficient, and data-driven.",
+    longDescription:
+      "Built using MongoDB, Express, React, and Node.js, this system allows students to submit feedback anonymously using SHA-256 encryption. Professors can view analytics and feedback trends using Chart.js. Designed for academic institutions to gather honest student input securely.",
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", 
+    technologies: ["MongoDB", "Express", "React", "Node.js", "Chart.js"],
     features: [
-      "User authentication & authorization",
-      "Product catalog with search & filtering",
-      "Shopping cart & checkout process",
-      "Payment integration with Stripe",
-      "Admin dashboard for product management",
-      "Order tracking and history"
+      "Anonymous feedback via SHA-256 encryption",
+      "Admin dashboard for data viewing",
+      "Professor-wise feedback charts",
+      "Form validation and access control",
+      "Clean responsive UI"
     ],
-    liveUrl: "https://example-ecommerce.com",
-    githubUrl: "https://github.com/example/ecommerce"
+    liveUrl: "https://feedback-system-client-2oay1anp9-ajays-projects-b96f1c0e.vercel.app/",
+    githubUrl: "https://github.com/Ajaypaluri/feedback-system-client.git"
   },
   {
-    id: "social-media",
-    title: "Social Media App",
-    description: "Real-time social media platform with posts, likes, comments, and messaging. Built with React, Socket.io, and Express.js for seamless user interaction.",
-    longDescription: "A full-featured social media application that enables users to connect, share content, and communicate in real-time. The platform includes features like posting updates, liking and commenting on posts, real-time messaging, user profiles, and friend connections. Built with a focus on performance and user experience.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    technologies: ["React", "Socket.io", "Express", "MongoDB", "JWT"],
+    id: "lead-dashboard",
+    title: "Lead Management Dashboard",
+    description: "A React-based dashboard to manage leads, assign tasks, and track sales pipelines in real-time.",
+    longDescription:
+      "Developed for efficient lead tracking, this dashboard uses React.js with modern UI practices. It supports filtering, lead stage tracking, user assignment, and role-based access. Built for marketing and sales teams to boost productivity.",
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    technologies: ["React", "Context API", "LocalStorage"],
     features: [
-      "Real-time messaging system",
-      "Post creation with image uploads",
-      "Like and comment functionality",
-      "User profiles and friend connections",
-      "News feed with infinite scroll",
-      "Push notifications"
+      "Lead assignment and status tracking",
+      "Interactive dashboard UI",
+      "Search and filter functionality",
+      "Responsive and mobile-friendly",
+      "LocalStorage-based state persistence"
     ],
-    liveUrl: "https://example-social.com",
-    githubUrl: "https://github.com/example/social-media"
+    liveUrl: "https://ajaypaluri.github.io/lead-management-dashboard/",
+    githubUrl: "https://github.com/Ajaypaluri/lead-management-dashboard.git"
   },
   {
-    id: "task-management",
-    title: "Task Management App",
-    description: "Collaborative task management tool with drag-and-drop functionality, team collaboration features, and real-time updates for project tracking.",
-    longDescription: "A modern task management application designed for teams to collaborate effectively. Features include project organization, task assignment, progress tracking, and real-time collaboration. The intuitive drag-and-drop interface makes it easy to manage workflows and track project progress.",
-    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
+    id: "employee-management",
+    title: "Employee Management System",
+    description: "Manage employee records using React frontend and Spring Boot backend with CRUD operations.",
+    longDescription:
+      "This full-stack application uses React for the frontend and Spring Boot as the backend to manage employees. It includes features like adding, editing, viewing, and deleting employee records with form validations and search.",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    technologies: ["React", "Spring Boot", "REST API"],
     features: [
-      "Drag-and-drop task management",
-      "Team collaboration tools",
-      "Project timeline visualization",
-      "File attachments and comments",
-      "Progress tracking and analytics",
-      "Email notifications and reminders"
+      "Create, Read, Update, Delete (CRUD) operations",
+      "Spring Boot RESTful services",
+      "Responsive UI with form validation",
+      "Employee search and filter",
+      "API integration with React"
     ],
-    liveUrl: "https://example-tasks.com",
-    githubUrl: "https://github.com/example/task-management"
+    liveUrl: "https://ajaypaluri.github.io/crud-fullstack/",
+    githubUrl: "https://github.com/Ajaypaluri/crud-fullstack.git"
+  },
+  {
+    id: "banking-system",
+    title: "Basic Banking System",
+    description: "A simple yet effective banking system made with HTML, CSS, and JavaScript for basic fund transfers.",
+    longDescription:
+      "Created as a beginner-friendly frontend project to demonstrate banking logic and transaction handling. This static web app includes a basic UI for listing users and transferring funds between them using plain JavaScript.",
+    image: "https://img.freepik.com/free-vector/people-taking-out-money-from-bank-concept-illustration_114360-13931.jpg?semt=ais_hybrid&w=740",
+    technologies: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "User listing and fund transfer",
+      "Basic DOM manipulation",
+      "Responsive static pages",
+      "Minimalist design",
+      "Beginner-friendly UI"
+    ],
+    liveUrl: "https://ajaypaluri.github.io/Basic_Banking_system/",
+    githubUrl: "https://github.com/Ajaypaluri/Basic_Banking_system.git"
   }
 ];
+
+
+// const projects: Project[] = [
+//   {
+//     id: "ecommerce",
+//     title: "E-commerce Platform",
+//     description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, and order processing.",
+//     longDescription: "A comprehensive e-commerce platform built with modern web technologies. This project showcases advanced React patterns, secure payment processing with Stripe, and a robust backend API. The application features user authentication, product catalog management, shopping cart functionality, order processing, and an admin dashboard for managing products and orders.",
+//     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+//     technologies: ["React", "Node.js", "MongoDB", "Stripe", "Express"],
+//     features: [
+//       "User authentication & authorization",
+//       "Product catalog with search & filtering",
+//       "Shopping cart & checkout process",
+//       "Payment integration with Stripe",
+//       "Admin dashboard for product management",
+//       "Order tracking and history"
+//     ],
+//     liveUrl: "https://example-ecommerce.com",
+//     githubUrl: "https://github.com/example/ecommerce"
+//   },
+//   {
+//     id: "social-media",
+//     title: "Social Media App",
+//     description: "Real-time social media platform with posts, likes, comments, and messaging. Built with React, Socket.io, and Express.js for seamless user interaction.",
+//     longDescription: "A full-featured social media application that enables users to connect, share content, and communicate in real-time. The platform includes features like posting updates, liking and commenting on posts, real-time messaging, user profiles, and friend connections. Built with a focus on performance and user experience.",
+//     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+//     technologies: ["React", "Socket.io", "Express", "MongoDB", "JWT"],
+//     features: [
+//       "Real-time messaging system",
+//       "Post creation with image uploads",
+//       "Like and comment functionality",
+//       "User profiles and friend connections",
+//       "News feed with infinite scroll",
+//       "Push notifications"
+//     ],
+//     liveUrl: "https://example-social.com",
+//     githubUrl: "https://github.com/example/social-media"
+//   },
+//   {
+//     id: "task-management",
+//     title: "Task Management App",
+//     description: "Collaborative task management tool with drag-and-drop functionality, team collaboration features, and real-time updates for project tracking.",
+//     longDescription: "A modern task management application designed for teams to collaborate effectively. Features include project organization, task assignment, progress tracking, and real-time collaboration. The intuitive drag-and-drop interface makes it easy to manage workflows and track project progress.",
+//     image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
+//     technologies: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
+//     features: [
+//       "Drag-and-drop task management",
+//       "Team collaboration tools",
+//       "Project timeline visualization",
+//       "File attachments and comments",
+//       "Progress tracking and analytics",
+//       "Email notifications and reminders"
+//     ],
+//     liveUrl: "https://example-tasks.com",
+//     githubUrl: "https://github.com/example/task-management"
+//   }
+// ];
 
 interface ProjectsProps {
   onProjectSelect: (project: Project) => void;

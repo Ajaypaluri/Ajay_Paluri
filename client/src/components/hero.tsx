@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Instagram, ChevronDown } from "lucide-react";
 
 export default function Hero() {
   const scrollToSection = (href: string) => {
@@ -18,10 +18,10 @@ export default function Hero() {
       
       <div className="text-center text-white px-4 animate-fade-in">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
-          <span>John</span> <span>Smith</span>
+          <span>Ajay</span> <span>Paluri</span>
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl mb-8 font-light max-w-3xl mx-auto px-4 sm:px-0 drop-shadow-md">
-          Full Stack Developer crafting modern web experiences with the MERN stack
+          Full Stack Developer 
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -41,7 +41,7 @@ export default function Hero() {
         
         <div className="flex justify-center space-x-6">
           <a
-            href="https://github.com"
+            href="https://github.com/Ajaypaluri"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-green-400 transition-colors duration-300 text-2xl"
@@ -49,7 +49,7 @@ export default function Hero() {
             <Github />
           </a>
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/ajay-paluri-7967a11b8/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-green-400 transition-colors duration-300 text-2xl"
@@ -57,12 +57,12 @@ export default function Hero() {
             <Linkedin />
           </a>
           <a
-            href="https://twitter.com"
+            href="https://www.instagram.com/ajay_paluri/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-green-400 transition-colors duration-300 text-2xl"
           >
-            <Twitter />
+            <Instagram />
           </a>
         </div>
       </div>

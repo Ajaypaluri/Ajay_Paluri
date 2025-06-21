@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
@@ -83,7 +83,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">Email</h3>
-                <p className="text-sm sm:text-base text-slate-600">john.smith@example.com</p>
+                <p className="text-sm sm:text-base text-slate-600">ajaypaluri058@gmail.com</p>
               </div>
             </div>
 
@@ -93,7 +93,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">Phone</h3>
-                <p className="text-sm sm:text-base text-slate-600">+1 (555) 123-4567</p>
+                <p className="text-sm sm:text-base text-slate-600">+91 9392736678 </p>
               </div>
             </div>
 
@@ -103,14 +103,14 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">Location</h3>
-                <p className="text-sm sm:text-base text-slate-600">San Francisco, CA</p>
+                <p className="text-sm sm:text-base text-slate-600">Hyderabad, India</p>
               </div>
             </div>
 
             <div className="pt-8">
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Ajaypaluri"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-slate-200 hover:bg-blue-600 text-slate-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
@@ -118,21 +118,30 @@ export default function Contact() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/ajay-paluri-7967a11b8/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-slate-200 hover:bg-blue-600 text-slate-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a
+                {/* <a
                   href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 bg-slate-200 hover:bg-blue-600 text-slate-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
                 >
                   <Twitter className="w-5 h-5" />
+                </a> */}
+                <a
+                  href="https://www.instagram.com/ajay_paluri"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-slate-200 hover:bg-blue-600 text-slate-600 hover:text-white rounded-full flex items-center justify-center transition-all duration-300"
+                >
+                  <Instagram className="w-5 h-5" />
                 </a>
+
               </div>
             </div>
           </div>

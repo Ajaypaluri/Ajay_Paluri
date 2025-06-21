@@ -7,25 +7,25 @@ const skills: Skill[] = [
     id: "frontend",
     category: "Frontend",
     icon: "⚛️",
-    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Redux"]
+    skills: ["React.js", "TypeScript", "Tailwind CSS"]
   },
   {
     id: "backend",
     category: "Backend",
     icon: "🔧",
-    skills: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "REST APIs"]
+    skills: ["Node.js", "Express.js", "MongoDB","SpringBoot", "REST APIs"]
   },
   {
     id: "tools",
-    category: "Tools & DevOps",
+    category: "Tools",
     icon: "🛠️",
-    skills: ["Git & GitHub", "Docker", "AWS", "Vercel", "Jest"]
+    skills: ["Git & GitHub", "Postman"]
   },
   {
     id: "design",
-    category: "Design & UI/UX",
+    category: "UI/UX",
     icon: "🎨",
-    skills: ["Figma", "Adobe XD", "Responsive Design", "User Research", "Prototyping"]
+    skills: ["Figma", "Responsive Design"]
   }
 ];
 
