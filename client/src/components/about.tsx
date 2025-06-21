@@ -4,25 +4,25 @@ export default function About() {
   const { ref, isIntersecting } = useIntersectionObserver();
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div
             ref={ref}
             className={`transition-all duration-800 ${
               isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-8">About Me</h2>
-            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-6 sm:mb-8">About Me</h2>
+            <p className="text-base sm:text-lg text-slate-600 mb-4 sm:mb-6 leading-relaxed">
               I'm a passionate Full Stack Developer with 5+ years of experience building scalable web applications. 
               I specialize in the MERN stack and love creating user-centric solutions that solve real-world problems.
             </p>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 mb-6 sm:mb-8 leading-relaxed">
               When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, 
               or sharing knowledge with the developer community through blog posts and mentoring.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2 sm:gap-4">
               <div className="bg-slate-100 px-4 py-2 rounded-full">
                 <span className="text-sm font-medium text-slate-700">5+ Years Experience</span>
               </div>

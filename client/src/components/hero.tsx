@@ -17,24 +17,24 @@ export default function Hero() {
       <div className="absolute top-1/2 left-10 w-12 h-12 bg-white bg-opacity-10 rounded-full floating-animation-delayed-2 hidden sm:block" />
       
       <div className="text-center text-white px-4 animate-fade-in">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
           <span>John</span> <span>Smith</span>
         </h1>
-        <p className="text-xl md:text-2xl mb-8 font-light max-w-3xl mx-auto">
+        <p className="text-lg sm:text-xl md:text-2xl mb-8 font-light max-w-3xl mx-auto px-4 sm:px-0">
           Full Stack Developer crafting modern web experiences with the MERN stack
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
           <Button
             onClick={() => scrollToSection("#projects")}
-            className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            className="bg-green-500 hover:bg-green-600 text-white px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto"
           >
             View My Work
           </Button>
           <Button
             variant="outline"
             onClick={() => scrollToSection("#contact")}
-            className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-8 py-3 rounded-full font-semibold transition-all duration-300"
+            className="border-2 border-white text-white hover:bg-white hover:text-slate-900 px-6 sm:px-8 py-3 rounded-full font-semibold transition-all duration-300 w-full sm:w-auto"
           >
             Get In Touch
           </Button>

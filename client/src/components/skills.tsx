@@ -33,16 +33,16 @@ export default function Skills() {
   const { ref, isIntersecting } = useIntersectionObserver();
 
   return (
-    <section id="skills" className="py-20 bg-slate-100">
+    <section id="skills" className="py-16 sm:py-20 bg-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Skills & Technologies</h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-4 sm:mb-6">Skills & Technologies</h2>
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
             I work with modern technologies to build scalable, performant applications
           </p>
         </div>
         
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {skills.map((skillGroup, index) => (
             <Card
               key={skillGroup.id}
@@ -53,14 +53,14 @@ export default function Skills() {
               }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <CardContent className="p-8">
+              <CardContent className="p-6 sm:p-8">
                 <div className="text-4xl mb-4 text-blue-600">
                   {skillGroup.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-4">
                   {skillGroup.category}
                 </h3>
-                <ul className="space-y-2 text-slate-600">
+                <ul className="space-y-2 text-sm sm:text-base text-slate-600">
                   {skillGroup.skills.map((skill) => (
                     <li key={skill}>{skill}</li>
                   ))}

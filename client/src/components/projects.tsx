@@ -70,16 +70,16 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
   const { ref, isIntersecting } = useIntersectionObserver();
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Featured Projects</h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-4 sm:mb-6">Featured Projects</h2>
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
             A collection of projects that showcase my skills and passion for development
           </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <Card
               key={project.id}
@@ -96,9 +96,9 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
                 alt={project.title}
                 className="w-full h-48 object-cover"
               />
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-slate-800 mb-2">{project.title}</h3>
-                <p className="text-slate-600 mb-4 line-clamp-3">{project.description}</p>
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-2">{project.title}</h3>
+                <p className="text-sm sm:text-base text-slate-600 mb-4 line-clamp-3">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.slice(0, 3).map((tech) => (
@@ -108,13 +108,13 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
                   ))}
                 </div>
                 
-                <div className="flex justify-between items-center">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2"
+                      className="text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2 text-sm sm:text-base"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <ExternalLink className="w-4 h-4" />
@@ -126,7 +126,7 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-slate-600 hover:text-blue-600 font-medium flex items-center gap-2"
+                      className="text-slate-600 hover:text-blue-600 font-medium flex items-center gap-2 text-sm sm:text-base"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <Github className="w-4 h-4" />

@@ -19,9 +19,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     <Dialog open={!!project} onOpenChange={() => onClose()}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto mx-4 sm:mx-auto">
         <DialogHeader>
-          <DialogTitle className="text-3xl font-bold text-slate-800">
+          <DialogTitle className="text-2xl sm:text-3xl font-bold text-slate-800">
             {project.title}
           </DialogTitle>
         </DialogHeader>
@@ -36,17 +36,17 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             />
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             <div>
-              <h4 className="text-xl font-semibold text-slate-800 mb-4">Description</h4>
-              <p className="text-slate-600 mb-6 leading-relaxed">
+              <h4 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3 sm:mb-4">Description</h4>
+              <p className="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed">
                 {project.longDescription}
               </p>
               
-              <h4 className="text-xl font-semibold text-slate-800 mb-4">Technologies Used</h4>
-              <div className="flex flex-wrap gap-2 mb-6">
+              <h4 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3 sm:mb-4">Technologies Used</h4>
+              <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                 {project.technologies.map((tech) => (
-                  <Badge key={tech} variant="secondary" className="bg-blue-100 text-blue-800">
+                  <Badge key={tech} variant="secondary" className="bg-blue-100 text-blue-800 text-xs sm:text-sm">
                     {tech}
                   </Badge>
                 ))}
@@ -54,19 +54,19 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             </div>
             
             <div>
-              <h4 className="text-xl font-semibold text-slate-800 mb-4">Key Features</h4>
-              <ul className="space-y-2 text-slate-600 mb-6">
+              <h4 className="text-lg sm:text-xl font-semibold text-slate-800 mb-3 sm:mb-4">Key Features</h4>
+              <ul className="space-y-2 text-sm sm:text-base text-slate-600 mb-4 sm:mb-6">
                 {project.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
-                    <Check className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0 mt-0.5" />
                     {feature}
                   </li>
                 ))}
               </ul>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 {project.liveUrl && (
-                  <Button asChild className="bg-blue-600 hover:bg-blue-700">
+                  <Button asChild className="bg-blue-600 hover:bg-blue-700 text-sm sm:text-base">
                     <a
                       href={project.liveUrl}
                       target="_blank"
@@ -79,7 +79,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   </Button>
                 )}
                 {project.githubUrl && (
-                  <Button variant="outline" asChild>
+                  <Button variant="outline" asChild className="text-sm sm:text-base">
                     <a
                       href={project.githubUrl}
                       target="_blank"

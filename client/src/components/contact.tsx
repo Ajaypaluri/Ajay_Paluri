@@ -63,47 +63,47 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-slate-100">
+    <section id="contact" className="py-16 sm:py-20 bg-slate-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Get In Touch</h2>
-          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-4 sm:mb-6">Get In Touch</h2>
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
             Ready to collaborate? Let's discuss your project and bring your ideas to life.
           </p>
         </div>
 
-        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className={`space-y-8 transition-all duration-700 ${
             isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}>
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
-                <Mail className="w-5 h-5" />
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">Email</h3>
-                <p className="text-slate-600">john.smith@example.com</p>
+                <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">Email</h3>
+                <p className="text-sm sm:text-base text-slate-600">john.smith@example.com</p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
-                <Phone className="w-5 h-5" />
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">Phone</h3>
-                <p className="text-slate-600">+1 (555) 123-4567</p>
+                <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">Phone</h3>
+                <p className="text-sm sm:text-base text-slate-600">+1 (555) 123-4567</p>
               </div>
             </div>
 
             <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
-                <MapPin className="w-5 h-5" />
+              <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">Location</h3>
-                <p className="text-slate-600">San Francisco, CA</p>
+                <h3 className="text-base sm:text-lg font-semibold text-slate-800 mb-1 sm:mb-2">Location</h3>
+                <p className="text-sm sm:text-base text-slate-600">San Francisco, CA</p>
               </div>
             </div>
 
@@ -141,8 +141,8 @@ export default function Contact() {
           <Card className={`transition-all duration-700 delay-300 ${
             isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}>
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <CardContent className="p-6 sm:p-8">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div>
                   <Label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
                     Name
