@@ -490,32 +490,28 @@
 // }
 
 
-import { useState, useRef } from "react";
-import { useToast } from "@/hooks/use-toast";
+import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Mail, Phone, MapPin, Github, Linkedin, Instagram } from "lucide-react";
+import { useRef, useState } from "react";
 
 export default function Contact() {
+  const { ref, isIntersecting } = useIntersectionObserver();
   const formRef = useRef<HTMLFormElement>(null);
-  const { toast } = useToast();
+  const [statusMessage, setStatusMessage] = useState("");
 
-  const [formStatus, setFormStatus] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-
     const form = formRef.current;
     if (!form) return;
 
     const data = new FormData(form);
 
     try {
-      const res = await fetch("https://formspree.io/f/mqabykny", {
+      const response = await fetch("https://formspree.io/f/mqabykny", {
         method: "POST",
         body: data,
         headers: {
@@ -523,70 +519,126 @@ export default function Contact() {
         },
       });
 
-      if (res.ok) {
-        toast({
-          title: "Thanks for your submission!",
-          description: "I'll get back to you soon.",
-        });
+      if (response.ok) {
+        setStatusMessage("✅ Message sent successfully!");
         form.reset();
-        setFormStatus(null);
       } else {
-        const json = await res.json();
-        if (json.errors) {
-          const errorMsg = json.errors.map((e: any) => e.message).join(", ");
-          setFormStatus(errorMsg);
-          toast({
-            title: "Error",
-            description: errorMsg,
-            variant: "destructive",
-          });
-        } else {
-          throw new Error("Unknown error");
-        }
+        setStatusMessage("❌ Failed to send message. Please try again.");
       }
-    } catch (err) {
-      setFormStatus("Oops! There was a problem submitting your form");
-      toast({
-        title: "Submission failed",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
+    } catch (error) {
+      setStatusMessage("❌ An error occurred. Please try again.");
     }
   };
 
   return (
-    <section id="contact" className="py-16 bg-slate-100">
-      <div className="max-w-3xl mx-auto px-4">
-        <Card>
-          <CardContent className="p-6 sm:p-8">
-            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <Label htmlFor="name">Name</Label>
-                <Input type="text" id="name" name="name" required />
+    <section id="contact" className="py-16 sm:py-20 bg-slate-100">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">Get In Touch</h2>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            Ready to collaborate? Let’s discuss your project and bring your ideas to life.
+          </p>
+        </div>
+
+        <div ref={ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Left - Contact Info */}
+          <div
+            className={`space-y-8 transition-all duration-700 ${
+              isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                <Mail />
               </div>
               <div>
-                <Label htmlFor="email">Email</Label>
-                <Input type="email" id="email" name="email" required />
+                <h3 className="text-lg font-semibold text-slate-800">Email</h3>
+                <p className="text-slate-600">ajaypaluri058@gmail.com</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                <Phone />
               </div>
               <div>
-                <Label htmlFor="subject">Subject</Label>
-                <Input type="text" id="subject" name="subject" required />
+                <h3 className="text-lg font-semibold text-slate-800">Phone</h3>
+                <p className="text-slate-600">+91 9392736678</p>
+              </div>
+            </div>
+
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                <MapPin />
               </div>
               <div>
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" rows={5} required />
+                <h3 className="text-lg font-semibold text-slate-800">Location</h3>
+                <p className="text-slate-600">Hyderabad, India</p>
               </div>
-              <Button type="submit" disabled={loading}>
-                {loading ? "Sending..." : "Send Message"}
-              </Button>
-              {formStatus && (
-                <p className="text-sm text-red-600 mt-2">{formStatus}</p>
-              )}
-            </form>
-          </CardContent>
-        </Card>
+            </div>
+
+            <div className="pt-8 flex space-x-4">
+              <a
+                href="https://github.com/Ajaypaluri"
+                target="_blank"
+                className="w-12 h-12 bg-slate-200 hover:bg-blue-600 text-slate-600 hover:text-white rounded-full flex items-center justify-center transition-all"
+              >
+                <Github />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ajay-paluri-7967a11b8/"
+                target="_blank"
+                className="w-12 h-12 bg-slate-200 hover:bg-blue-600 text-slate-600 hover:text-white rounded-full flex items-center justify-center transition-all"
+              >
+                <Linkedin />
+              </a>
+              <a
+                href="https://www.instagram.com/ajay_paluri"
+                target="_blank"
+                className="w-12 h-12 bg-slate-200 hover:bg-blue-600 text-slate-600 hover:text-white rounded-full flex items-center justify-center transition-all"
+              >
+                <Instagram />
+              </a>
+            </div>
+          </div>
+
+          {/* Right - Contact Form */}
+          <Card
+            className={`transition-all duration-700 ${
+              isIntersecting ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
+            <CardContent className="p-6 sm:p-8">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <Label htmlFor="name">Name</Label>
+                  <Input type="text" id="name" name="name" required />
+                </div>
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input type="email" id="email" name="email" required />
+                </div>
+                <div>
+                  <Label htmlFor="subject">Subject</Label>
+                  <Input type="text" id="subject" name="subject" required />
+                </div>
+                <div>
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" name="message" rows={5} required />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-all"
+                >
+                  Send Message
+                </button>
+                {statusMessage && (
+                  <p className="text-sm text-center text-green-600 pt-2">{statusMessage}</p>
+                )}
+              </form>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </section>
   );
