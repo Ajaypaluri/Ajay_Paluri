@@ -7,7 +7,7 @@ const skills: Skill[] = [
     id: "frontend",
     category: "Frontend",
     icon: "⚛️",
-    skills: ["React.js", "TypeScript", "Tailwind CSS"]
+    skills: ["React.js", "JavaScript", "Tailwind CSS"]
   },
   {
     id: "backend",
